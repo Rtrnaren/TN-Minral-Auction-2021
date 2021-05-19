@@ -1,0 +1,327 @@
+
+<!DOCTYPE HTML>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Note there is no responsive meta tag here -->
+
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+
+    <title>TN Mineral Block Auction</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/layoutstyle_index.css" rel="stylesheet">
+		
+		<!-- jQuery library -->
+		<!--<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>-->
+		<!--<script type="text/javascript" src="../lib/js/external/jquery-1.6.2.min.js"></script>-->
+		
+		<!-- jQuery Plugin scripts -->
+		<!--<script type="text/javascript" src="js/external/jquery.easing.1.3.min.js"></script>-->
+		
+		
+		<!-- Slider Kit scripts -->
+		<!--<script type="text/javascript" src="js/sliderkit/jquery.sliderkit.1.9.2.pack.js"></script>		
+		<script type="text/javascript" src="js/sliderkit/addons/sliderkit.delaycaptions.1.1.pack.js"></script>
+		<script type="text/javascript" src="js/sliderkit/addons/sliderkit.counter.1.0.pack.js"></script>
+		<script type="text/javascript" src="js/sliderkit/addons/sliderkit.timer.1.0.pack.js"></script>
+		<script type="text/javascript" src="js/sliderkit/addons/sliderkit.imagefx.1.0.pack.js"></script>-->
+
+		<!-- Slider Kit launch -->
+		<script type="text/javascript">
+			/*$(window).on("load",function(){ //$(window).load() must be used instead of $(document).ready() because of Webkit compatibility				
+				
+					
+				// Photo gallery > Minimalistic
+				$(".photosgallery-minimalistic").sliderkit({
+					shownavitems:6,
+					circular:true,
+					navitemshover:false,
+					panelfxspeed:400,
+					auto:true,
+					autostill:true,
+					timer:false
+				});
+			});	*/
+		</script>
+		
+		<!-- Slider Kit styles -->
+		<link rel="stylesheet" type="text/css" href="css/sliderkit-core.css" media="screen, projection" />
+		
+		
+		<!-- Slider Kit compatibility -->
+		<!--[if IE 6]><link rel="stylesheet" type="text/css" href="../lib/css/sliderkit-demos-ie6.css" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" type="text/css" href="../lib/css/sliderkit-demos-ie7.css" /><![endif]-->
+		<!--[if IE 8]><link rel="stylesheet" type="text/css" href="../lib/css/sliderkit-demos-ie8.css" /><![endif]-->
+			<SCRIPT LANGUAGE="JavaScript" src="../ajaxhelper.js"></script>
+			<script language="javascript" src="../Vector.js"></script>
+			<script type="text/javascript">
+			function setfocus(){
+			if(typeof(document.login) != 'undefined') document.login.userName.focus();	 
+		}
+
+		function setcolor(elmt, bgrd){ if (elmt.style){ elmt.style.backgroundColor = bgrd;} }
+
+		  function validate(){
+			var bgcol = "#C0C0C0";
+			var bgdef = "white";
+
+			setcolor(document.login.userName, bgdef);
+			setcolor(document.login.password, bgdef);
+
+			if ((document.login.userName.value).length < 1 || (document.login.userName.value).length > 25){
+			setcolor(document.login.userName, bgcol);
+			alert("Please enter at least 1 characters in the \"User Name\" field.");	
+			document.login.userName.focus();     
+			return false;
+
+			}else if ((document.login.password.value).length < 2 || (document.login.password.value).length > 15){
+			setcolor(document.login.password, bgcol);
+			alert("Please enter between 4 to 15 characters in the Password field.");
+			document.login.password.focus();
+			return false;
+
+			}else if (document.login.state.value==0){
+			alert("Please Select State.");
+			document.login.password.focus();
+			return false;
+			}else{
+				var radios = document.getElementsByName('RadioGroup1');
+				var value;
+				for (var i = 0; i < radios.length; i++) {
+					if (radios[i].type === 'radio' && radios[i].checked) {
+						// get value, set checked flag or do whatever you need to
+						value = radios[i].value;       
+					}
+				}
+
+			document.getElementById('choice').value=value;
+			if(value=='2'){
+				//document.getElementById('choice').value='2';
+				Object_chk=new Vector('idschosen');
+				Object_chk.loginchk('hstip','hstnm');
+				}
+				//alert("here i am..."+value);
+				//document.getElementById().value
+				document.getElementById('digitaldata1').value='USER : '+document.getElementById('userName').value+' SIGN WITH DSC TO LOGIN TIME :'+Date();
+				//if(confirm('SIGN THIS DATA --> '+document.getElementById('digitaldata1').value+' WITH YOUR DSC TO LOGIN')){
+				//if(signcode(1+'')){
+				if(true){
+				document.getElementById('login').action='../mstc/processLogon_mlcldsc.jsp';
+				document.login.submit();
+				}else{
+				alert("error in sigining...");
+				return ;
+				}
+				//}
+				
+				
+				
+				//return true;
+				
+			}
+		  }
+		</script>
+		</head>
+        
+        
+	<body>
+     <form id="login" name="login" method="post"  >
+    <div class="container">
+      
+       <div class="pan1">
+       <!-- Start photosgallery-minimalistic -->
+				<!--<div class="sliderkit photosgallery-minimalistic">
+					
+					<div class="sliderkit-panels">
+						<div class="sliderkit-panel">
+							<img src="Mine 1.jpg" alt="" />
+						</div>
+					</div>
+					<div class="sliderkit-timer"></div>
+				</div>-->
+				<!-- end of photosgallery-minimalistic -->
+				
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="Mine 1.jpg" alt="" />
+						</div>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+            
+            <div class="scrollTxt">
+        <!--<marquee behavior="scroll" direction="left">Announcements</marquee>-->
+        <marquee id="banner" scrollamount="5" align="middle" onmouseover="this.scrollAmount=0" onmouseout="this.scrollAmount=3" behavior="scroll"><a href="admin/highlights_message.jsp">Click for Highlights</a>&nbsp;&nbsp;<font size="2" color="#CC0000">Important: Bidders/Applicants are advised to check the contents of this website regularly for latest updates/addenda/corrigenda etc.</font>&nbsp;&nbsp;<font size="2" color= #DAF7A6">Tender documents for Invitation of bids for grant of Mining lease for  the Gold & Associated Minerals in Parasi,Block Tamar, District Ranchi - Jharkhand has been uploaded</font>&nbsp;&nbsp&nbsp;&nbsp<font size='2' color= '#ff0000'>MSTC BHOPAL IS GOING TO CONDUCT ONLINE AUCTIONS FOR GRANT OF MINING LEASE ON BEHALF OF MP GOVT FOR THE FOLLOWING MINERALLIMESTONE, IRON, GRAPHITE, BAUXITE, FOR MORE INFORMATION KINDLY VISIT MSTC WEB SITE www.mstcindia.co.in OR CONTACT ï¿½ SRI SHISHUPAL YADAV AT +91-8826562675</font>&nbsp;&nbsp&nbsp;&nbsp<font size='2' color= '#3c33ff'>Additional technical documents have been uploaded in few blocks of Madhya Pradesh</font></marquee>
+        </div>  
+        
+        <div class="row">
+        <!-- RIGHT PANEL-->
+        <div class="leftPanel">
+        	<div class="linklist">
+                <ul class="list">
+					<li><button type='button' class="button small2 blue" onclick="nextpage('63');" >Ariyalur</button></li>
+					<li><button type='button' class="button small2 blue" onclick="nextpage('64');" >Coimbatore</button></li>
+					<li><button type='button' class="button small2 blue" onclick="nextpage('65');" >Cuddalore</button></li>
+					<li><button type='button' class="button small2 blue" onclick="nextpage('66');" >Dindigul</button></li>
+					<li><button type='button' class="button small2 blue" onclick="nextpage('61');" >Kanyakumari</button></li>
+					<li><button type='button' class="button small2 blue" onclick="nextpage('67');" >Madurai</button></li>
+					<li><button type='button' class="button small2 blue" onclick="nextpage('68');" >Salem</button></li>
+					<li><button type='button' class="button small2 blue" onclick="nextpage('62');" >Perabalur</button></li>
+					<li><button type='button' class="button small2 blue" onclick="nextpage('69');" >Tuticorin</button></li>
+					<li><button type='button' class="button small2 blue" onclick="nextpage('70');" >Tirunelveli</button></li>
+					<hr>
+					<li><a href="#" class="button small2 green">Summary of all States</a></li>
+					<li><a href="RenderFileMLCL.jsp?file=Time-Table-Phase-IV-Stage-I-GoM.xlsx" class="button small2 orange">Time Table For Bidding</a></li>
+                </ul>	
+             </div>
+           </div>
+           
+        <!-- RIGHT PANEL END-->
+      
+        
+        
+       <!-- MIDDLE PANEL-->
+      <div class="midPanel">
+	    <h4 class="headingTxt">Welcome to Mineral Block Auction </h4>
+        <div class="midPanel3">
+        	<img src="Mine Truck.jpg" width="400" height="400"/>
+     	</div>
+      </div><!-- MIDDLE PANEL END-->
+      
+      <!-- BUYER LOGIN PANEL-->
+     <div class="rightPanel">
+     	<div class="panel panel-black">
+			<div class="panel-heading">
+			    	<h3 class="panel-title"><A HREF="auctionhome/Layouts/registeoptionrncm.html">Registration</A></h3> 
+			</div>
+			 </div>
+			
+     		<div class="panel panel-black"> 
+				<div class="panel-heading">
+			    	<h3 class="panel-title">Login</h3>
+			 	</div>
+			  	<div class="panel-body">
+                    <fieldset>
+			    	  	<div class="form-group">
+			    		    <input class="form-control" placeholder="Userid" name="userName" id="userName" size="25" type="text" autocomplete="off">
+			    		</div>
+			    		<div class="form-group">
+			    			<input class="form-control" placeholder="Password" name="password" id="password" size="25" type="password" value="" autocomplete="off">
+			    		</div>
+						<div class="form-group" style="margin-left:10px;">
+                          <label>
+                            <input type="radio" name="RadioGroup1" value="2" id="RadioGroup1_0" checked />
+                            Bidder</label>
+                          <label>
+                            <input type="radio" name="RadioGroup1" value="1" id="RadioGroup1_1" />
+                            Seller</label>
+                          <label>
+                            <input type="radio" name="RadioGroup1" value="3" id="RadioGroup1_2"/>
+                            TCM</label>
+                      </div>
+					   
+					    <div class="form-group">
+							<select id="district" name="district" class="form-control">
+							<option value="0">Select District</option>
+							
+							  <option value="and">Ariyalur</option>
+							  
+							  <option value="and">Chennai</option>
+							  
+							  <option value="ass">Coimbatore</option>
+							  
+							  <option value="chh">Cuddalore</option>
+							  
+							  <option value="guj">Dindigul</option>
+							  
+							  <option value="him">Kanyakumari</option>
+							  
+							  <option value="jha">Madurai</option>
+							  
+							  <option value="kar">Salem</option>
+							  
+							  <option value="mad">Perabalur</option>
+							  
+							  <option value="mah">Tenkasi</option>
+							  
+							  <option value="ori">Tuticorin</option>
+							  
+							  <option value="raj">Tirunelveli</option>
+							  
+							  <option value="tam">Vellore</option>
+							  
+							  <option value="utt">Virudhunagar</option>
+							  
+							</select>
+			    		</div>
+					   
+                       
+                       <input class="button blue btn-block" type="button" value="Login" onClick="return validate();">
+					   <input type="hidden" name ="choice" id="choice"/> 
+						<INPUT TYPE="hidden"  NAME="hstnm" id="hstnm">
+						<INPUT TYPE="hidden"  NAME="hstip" id="hstip">
+						<INPUT TYPE="hidden" name='signeddata1' id='signeddata1' >
+				        <INPUT TYPE="hidden" name='digitaldata1' id='digitaldata1' >
+                       <div class="forgotTxt">  
+                       <a href="/mstc/forgot_hpass_mlcl.jsp" >Forgot Password</a>
+                       </div>
+                      <!--  <div>&nbsp;</div> -->
+                       
+					   
+                        
+                    </fieldset>
+                 </div>
+			</div>
+       </div>
+       <!-- BUYER LOGIN PANEL END-->
+       
+        <div class="col-xs-12 linklist3">
+        <div class="linklist2">
+			
+        </div>
+       </div>
+        
+      </div>
+      </div>
+	   <div id="footer">
+      <div class="footertxt" >Copyright &copy; Tamil Nadu Mineral Auction 2021</div>
+    </div>
+	</form>
+	<form id="next_page" name="next_page" method="post">
+		<input type="hidden" name ="link_id" id="link_id"/>
+	</form>
+	
+	<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			$('.carousel').carousel();
+		});
+	</script>
+	
+	<SCRIPT LANGUAGE="JavaScript">
+		function nextpage(link_id){
+			document.getElementById('link_id').value = link_id;
+			document.getElementById('next_page').action = 'mlcl_listing.jsp';
+			document.getElementById('next_page').submit();
+		}
+	</SCRIPT>
+	
+	
+	</body>
+	 
+</html>
